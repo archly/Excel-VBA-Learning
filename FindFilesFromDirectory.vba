@@ -1,4 +1,22 @@
 
+Sub Demo()
+
+'use to save All find files
+Dim findResult As Collection
+Set findResult = New Collection
+
+Call findFiles("D:\dailycheck", ".csv", findResult)
+
+if findResult.count <> 0 then
+    'do something
+else
+    debug.print "Find nothing"
+end if
+
+set findResult = nothing
+
+End Sub
+
 '功能：搜尋想要的檔案，在某個資料夾內。並且將搜尋到的結果放入一個Collection
 '傳入：path 想要搜尋的資料夾
 '      format 想要搜尋的副檔名
