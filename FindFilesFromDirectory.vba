@@ -8,7 +8,10 @@ Set findResult = New Collection
 Call findFiles("D:\dailycheck", ".csv", findResult)
 
 if findResult.count <> 0 then
-    'do something
+    dim currectFile as Variant
+    for each currectFile in findResult
+        'do something
+    next
 else
     debug.print "Find nothing"
 end if
